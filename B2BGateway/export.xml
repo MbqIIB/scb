@@ -1,0 +1,530 @@
+<datapower-configuration version="3"><export-details><description>Exported Configuration</description><user>admin</user><domain>B2BGateway</domain><comment/><product-id>5725</product-id><product>IDG</product><display-product>IDG</display-product><model>IBM DataPower Gateway</model><display-model>IBM DataPower Gateway</display-model><device-name>IBM DataPower Gateway</device-name><serial-number>0000000</serial-number><firmware-version>IDG.7.5.1.0</firmware-version><display-firmware-version>IDG.7.5.1.0</display-firmware-version><firmware-build>277257</firmware-build><firmware-timestamp>2016/05/26 23:22:58</firmware-timestamp><current-date>2016-12-03</current-date><current-time>03:20:38 EST</current-time><reset-date>2016-10-19</reset-date><reset-time>05:46:13 EDT</reset-time><login-message/><custom-ui-file/></export-details><interface-data><interface name="eth0" type="Ethernet" vers="ipv4" ip-addr="192.168.112.6"/></interface-data><configuration domain="B2BGateway"><CryptoKey name="DataPower_Key" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///datapower.p12</Filename>
+<PasswordAlias>on</PasswordAlias>
+<Alias class="PasswordAlias">Datapower</Alias></CryptoKey><CryptoCertificate name="DataPower-Cert" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///datapower.p12</Filename>
+<PasswordAlias>on</PasswordAlias>
+<Alias class="PasswordAlias">Datapower</Alias>
+<IgnoreExpiration>off</IgnoreExpiration></CryptoCertificate><CryptoIdentCred name="DataPower" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Key class="CryptoKey">DataPower_Key</Key>
+<Certificate class="CryptoCertificate">DataPower-Cert</Certificate></CryptoIdentCred><SSLServerProfile name="SSL_Server_Profile" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>on</SSLv3>
+<TLSv1d0>on</TLSv1d0>
+<TLSv1d1>on</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Idcred class="CryptoIdentCred">DataPower</Idcred>
+<RequestClientAuth>off</RequestClientAuth>
+<RequireClientAuth>on</RequireClientAuth>
+<ValidateClientCert>on</ValidateClientCert>
+<SendClientAuthCAList>on</SendClientAuthCAList>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>20</CacheSize>
+<SSLOptions>
+<max-duration>off</max-duration>
+<max-renegotiation>off</max-renegotiation></SSLOptions>
+<MaxSSLDuration>60</MaxSSLDuration>
+<NumberOfRenegotiationAllowed>0</NumberOfRenegotiationAllowed>
+<ProhibitResumeOnReneg>off</ProhibitResumeOnReneg>
+<Compression>off</Compression>
+<AllowLegacyRenegotiation>off</AllowLegacyRenegotiation>
+<PreferServerCiphers>on</PreferServerCiphers>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves>
+<EllipticCurves>secp256r1</EllipticCurves></SSLServerProfile><HTTPSSourceProtocolHandler name="https_fsh_8100" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<LocalAddress>0.0.0.0</LocalAddress>
+<LocalPort>8100</LocalPort>
+<HTTPVersion>HTTP/1.1</HTTPVersion>
+<AllowedFeatures>
+<HTTP-1.0>on</HTTP-1.0>
+<HTTP-1.1>on</HTTP-1.1>
+<HTTP-2.0>off</HTTP-2.0>
+<POST>on</POST>
+<GET>off</GET>
+<PUT>on</PUT>
+<HEAD>off</HEAD>
+<OPTIONS>off</OPTIONS>
+<TRACE>off</TRACE>
+<DELETE>off</DELETE>
+<CONNECT>off</CONNECT>
+<CustomMethods>off</CustomMethods>
+<QueryString>on</QueryString>
+<FragmentIdentifiers>on</FragmentIdentifiers>
+<DotDot>off</DotDot>
+<CmdExe>off</CmdExe></AllowedFeatures>
+<PersistentConnections>on</PersistentConnections>
+<MaxPersistentConnectionsReuse>0</MaxPersistentConnectionsReuse>
+<AllowCompression>off</AllowCompression>
+<AllowWebSocketUpgrade>off</AllowWebSocketUpgrade>
+<WebSocketIdleTimeout>0</WebSocketIdleTimeout>
+<MaxURLLen>16384</MaxURLLen>
+<MaxTotalHdrLen>128000</MaxTotalHdrLen>
+<MaxHdrCount>0</MaxHdrCount>
+<MaxNameHdrLen>0</MaxNameHdrLen>
+<MaxValueHdrLen>0</MaxValueHdrLen>
+<MaxQueryStringLen>0</MaxQueryStringLen>
+<CredentialCharset>protocol</CredentialCharset>
+<SSLServerConfigType>server</SSLServerConfigType>
+<SSLServer class="SSLServerProfile">SSL_Server_Profile</SSLServer>
+<HTTP2MaxStreams>100</HTTP2MaxStreams>
+<HTTP2MaxFrameSize>16384</HTTP2MaxFrameSize>
+<HTTP2StreamHeader>off</HTTP2StreamHeader></HTTPSSourceProtocolHandler><HTTPUserAgent name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>Default User Agent</UserSummary>
+<MaxRedirects>8</MaxRedirects>
+<Timeout>300</Timeout></HTTPUserAgent><XMLManager name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>Default XML-Manager</UserSummary>
+<CacheSize>256</CacheSize>
+<SHA1Caching>on</SHA1Caching>
+<StaticDocumentCalls>on</StaticDocumentCalls>
+<SearchResults>on</SearchResults>
+<SupportTxWarn>off</SupportTxWarn>
+<Memoization>on</Memoization>
+<ParserLimitsBytesScanned>4194304</ParserLimitsBytesScanned>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<DocCacheMaxDocs>5000</DocCacheMaxDocs>
+<DocCacheSize>0</DocCacheSize>
+<DocMaxWrites>32768</DocMaxWrites>
+<UserAgent class="HTTPUserAgent">default</UserAgent></XMLManager><Matching name="Napas_getBillInfo" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<MatchRules>
+<Type>url</Type>
+<HttpTag/>
+<HttpValue/>
+<Url>/billpayment/sml/getBillInfo</Url>
+<ErrorCode/>
+<XPATHExpression/>
+<Method>default</Method>
+<CustomMethod/></MatchRules>
+<MatchWithPCRE>off</MatchWithPCRE>
+<CombineWithOr>off</CombineWithOr></Matching><StylePolicyAction name="B2BGateway_Napas_getBillInfo_validate_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>validate</Type>
+<Input>INPUT</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<WsdlURL>local:///B2BGateway/getBiillInfo/getBiillInfo.wsdl</WsdlURL>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_getBillInfo_xform_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///B2BGateway/getBiillInfo/Napas_invoke_getBillInfo.xsl</Transform>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>dpvar_11</Output>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_getBillInfo_validate_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>validate</Type>
+<Input>dpvar_11</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<WsdlURL>local:///B2BGateway/getBiillInfo/getBiillInfo.wsdl</WsdlURL>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_getBillInfo_setvar_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>setvar</Type>
+<Input>dpvar_11</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<Variable>var://service/mpgw/skip-backside</Variable>
+<Value>1</Value>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_getBillInfo_results_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>dpvar_11</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="B2BGateway_Napas_getBillInfo" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Direction>rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed>
+<Actions class="StylePolicyAction">B2BGateway_Napas_getBillInfo_validate_0</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_getBillInfo_xform_0</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_getBillInfo_validate_1</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_getBillInfo_setvar_0</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_getBillInfo_results_0</Actions></StylePolicyRule><Matching name="Napas_payBill" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<MatchRules>
+<Type>url</Type>
+<HttpTag/>
+<HttpValue/>
+<Url>/billpayment/sml/payBill</Url>
+<ErrorCode/>
+<XPATHExpression/>
+<Method>default</Method>
+<CustomMethod/></MatchRules>
+<MatchWithPCRE>off</MatchWithPCRE>
+<CombineWithOr>off</CombineWithOr></Matching><StylePolicyAction name="B2BGateway_Napas_payBill_validate_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>validate</Type>
+<Input>INPUT</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<WsdlURL>local:///B2BGateway/payBill/payBill.wsdl</WsdlURL>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_payBill_xform_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///B2BGateway/payBill/Napas_invoke_payBill.xsl</Transform>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>dpvar_12</Output>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_payBill_setvar_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>setvar</Type>
+<Input>dpvar_12</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<Variable>var://service/mpgw/skip-backside</Variable>
+<Value>1</Value>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_payBill_validate_3" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>validate</Type>
+<Input>dpvar_12</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<WsdlURL>local:///B2BGateway/payBill/payBill.wsdl</WsdlURL>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="B2BGateway_Napas_payBill_results_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>dpvar_12</Input>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="B2BGateway_Napas_payBill" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Direction>rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed>
+<Actions class="StylePolicyAction">B2BGateway_Napas_payBill_validate_2</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_payBill_xform_1</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_payBill_setvar_0</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_payBill_validate_3</Actions>
+<Actions class="StylePolicyAction">B2BGateway_Napas_payBill_results_1</Actions></StylePolicyRule><StylePolicy name="B2BGateway_Policy" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+<DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+<DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+<PolicyMaps>
+<Match class="Matching">Napas_getBillInfo</Match>
+<Rule class="StylePolicyRule">B2BGateway_Napas_getBillInfo</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">Napas_payBill</Match>
+<Rule class="StylePolicyRule">B2BGateway_Napas_payBill</Rule></PolicyMaps></StylePolicy><PolicyAttachments name="B2BGateway" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EnforcementMode>enforce</EnforcementMode>
+<PolicyReferences>on</PolicyReferences>
+<SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode></PolicyAttachments><MultiProtocolGateway name="B2BGateway" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Priority>normal</Priority>
+<FrontProtocol class="HTTPSSourceProtocolHandler">https_fsh_8100</FrontProtocol>
+<XMLManager class="XMLManager">default</XMLManager>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<StylesheetParameters>
+<ParameterName>NapasWS</ParameterName>
+<ParameterValue>http://192.168.56.4:7878/VAS/services/VAS</ParameterValue></StylesheetParameters>
+<StylesheetParameters>
+<ParameterName>SignWS</ParameterName>
+<ParameterValue>http://192.168.73.49:7800/smartlink/signature</ParameterValue></StylesheetParameters>
+<DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+<QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+<PropagateURI>on</PropagateURI>
+<MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+<RequestAttachments>strip</RequestAttachments>
+<ResponseAttachments>strip</ResponseAttachments>
+<RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+<ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+<RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+<FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+<BackAttachmentFormat>dynamic</BackAttachmentFormat>
+<MIMEFrontHeaders>on</MIMEFrontHeaders>
+<MIMEBackHeaders>on</MIMEBackHeaders>
+<StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+<StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+<MaxMessageSize>0</MaxMessageSize>
+<GatewayParserLimits>off</GatewayParserLimits>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+<ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+<DebugMode persisted="false">on</DebugMode>
+<DebuggerType>internal</DebuggerType>
+<DebugHistory>25</DebugHistory>
+<FlowControl>off</FlowControl>
+<SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+<FrontTimeout>120</FrontTimeout>
+<BackTimeout>120</BackTimeout>
+<FrontPersistentTimeout>180</FrontPersistentTimeout>
+<BackPersistentTimeout>180</BackPersistentTimeout>
+<IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+<BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+<PersistentConnections>on</PersistentConnections>
+<LoopDetection>off</LoopDetection>
+<DoHostRewriting>on</DoHostRewriting>
+<DoChunkedUpload>off</DoChunkedUpload>
+<ProcessHTTPErrors>on</ProcessHTTPErrors>
+<HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+<HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+<InOrderMode>
+<Request>off</Request>
+<Backend>off</Backend>
+<Response>off</Response></InOrderMode>
+<WSAMode>sync2sync</WSAMode>
+<WSARequireAAA>on</WSARequireAAA>
+<WSAStrip>on</WSAStrip>
+<WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+<WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+<WSAForce>off</WSAForce>
+<WSAGenStyle>sync</WSAGenStyle>
+<WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+<WSATimeout>120</WSATimeout>
+<WSRMEnabled>off</WSRMEnabled>
+<WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+<WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+<WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+<WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+<WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+<WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+<WSRMFrontForce>off</WSRMFrontForce>
+<WSRMBackForce>off</WSRMBackForce>
+<WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+<WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+<WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+<WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+<WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+<WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+<WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+<WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+<WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+<WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+<WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+<ForcePolicyExec>off</ForcePolicyExec>
+<RewriteErrors>on</RewriteErrors>
+<DelayErrors>on</DelayErrors>
+<DelayErrorsDuration>1000</DelayErrorsDuration>
+<RequestType>soap</RequestType>
+<ResponseType>soap</ResponseType>
+<FollowRedirects>on</FollowRedirects>
+<RewriteLocationHeader>off</RewriteLocationHeader>
+<StylePolicy class="StylePolicy">B2BGateway_Policy</StylePolicy>
+<Type>dynamic-backend</Type>
+<AllowCompression>off</AllowCompression>
+<AllowCacheControlHeader>off</AllowCacheControlHeader>
+<PolicyAttachments class="PolicyAttachments">B2BGateway</PolicyAttachments>
+<GeneratedPolicies class="GeneratedPolicy">__gp_1477111161_0004</GeneratedPolicies>
+<WSMAgentMonitor>off</WSMAgentMonitor>
+<WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+<ProxyHTTPResponse>off</ProxyHTTPResponse></MultiProtocolGateway></configuration><files><file name="cert:///datapower.p12" src="cert/datapower.p12" location="cert" key="true"/><file name="local:///B2BGateway/getBiillInfo/getBiillInfo.wsdl" src="local/B2BGateway/getBiillInfo/getBiillInfo.wsdl" location="local" hash="XEhKVZJRuq8wHInm31wzMiodsfQ="/><file name="local:///B2BGateway/getBiillInfo/Napas_invoke_getBillInfo.xsl" src="local/B2BGateway/getBiillInfo/Napas_invoke_getBillInfo.xsl" location="local" hash="3C4ItEkjpemLyytqPnyfez5nRzI="/><file name="local:///B2BGateway/payBill/payBill.wsdl" src="local/B2BGateway/payBill/payBill.wsdl" location="local" hash="zraNrSS9SWcm9t6tYoA1SJdRfz8="/><file name="local:///B2BGateway/payBill/Napas_invoke_payBill.xsl" src="local/B2BGateway/payBill/Napas_invoke_payBill.xsl" location="local" hash="1iT/OKgFBnVakOuMvwkn/Wb1AKQ="/><file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl" location="dp-aux" internal="true" hash="6SlW5CAIMAdTwlasyrys7rFtLLI="/><file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl" location="dp-aux" internal="true" hash="YWjVARwxJCW3zkIbcgQw2UJL1kM="/><file name="webgui:///management.xsl" src="dp-aux/management.xsl" location="dp-aux" internal="true" hash="jaVBcAZOZmnnAJfQcSbjdqhK1ks="/><file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl" location="dp-aux" internal="true" hash="n00B2bmGoH6OdSOW1QRz/SNVbYc="/><file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml" location="dp-aux" internal="true" hash="+EvQy2Vah/JDDvX129+V8lK5iiM="/><file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml" location="dp-aux" internal="true" hash="UkIc6sKzykqNpmVlsHF89TLn2Qo="/></files></datapower-configuration>

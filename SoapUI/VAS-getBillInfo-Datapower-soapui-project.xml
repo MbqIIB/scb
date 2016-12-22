@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="VAS_getBiillInfo_Datapower" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" id="f7546cd9-f4e6-456d-ad37-a92462861948" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SmlGetBillInfo" type="wsdl" bindingName="{http://www.scb.com.vn/billpayment/sml}SmlGetBillInfo" soapVersion="1_1" anonymous="optional" definition="file:/D:/Cloud/GoogleDrive/Project/Individual/SCB/DataPower/SourceCode/getBiillInfo.wsdl" id="c228b9a5-c439-4d04-a6ab-48335a1b19b7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\Cloud\GoogleDrive\Project\Individual\SCB\DataPower\SourceCode\getBiillInfo.wsdl"><con:part><con:url>file:\D:\Cloud\GoogleDrive\Project\Individual\SCB\DataPower\SourceCode\getBiillInfo.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SmlDoPaymentWS" targetNamespace="http://www.scb.com.vn/billpayment/sml" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.scb.com.vn/billpayment/sml" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.scb.com.vn/billpayment/sml">
+      <xsd:element name="getBillInfoRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <!--Số thẻ hoặc số tài khoản của khách hàng. Chỉ bao gồm các kí tự số từ 0-9, các kí tự a-z hoặc A-Z-->
+            <xsd:element name="PrimaryAccountNumber" type="xsd:string"/>
+            <xsd:element name="TransactionAmount" type="xsd:string"/>
+            <!--Thời gian và ngày tháng giao dịch (MMddHHmmss). Chỉ bao gồm 10 ký tự số 0-9-->
+            <xsd:element name="TransmissionDateTime" type="xsd:string"/>
+            <!--Số lưu vết hệ thống. Chỉ bao gồm 6 ký tự số 0-9. Duy nhất trong khoảng thời gian 24h-->
+            <xsd:element name="AuditNumber" type="xsd:string"/>
+            <!--Loai dai ly: 6011 (ATM), 6012 (POS), 7399 (EBANK)-->
+            <xsd:element name="MerchantType" type="xsd:string"/>
+            <!--Ma thiet bi, 8 ky tu-->
+            <xsd:element name="TermId" type="xsd:string"/>
+            <!--Tên vị trí chấp nhận thẻ. Chỉ gồm 40 ký tự số từ 0-9, các kí tự a-z hoặc A-Z, khoảng trắng-->
+            <xsd:element name="CardAcceptorName" type="xsd:string"/>
+            <!--Ma dich vu nha cung cap cua SML-->
+            <xsd:element name="ServiceCode" type="xsd:string"/>
+            <!--Ma hoa don, so dien thoai, tai khoan game-->
+            <xsd:element name="BillId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBillInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <!--Mã trả về. Tham chiếu bảng mã-->
+            <xsd:element name="ResponseCode" type="xsd:string"/>
+            <xsd:element name="TransactionAmount" type="xsd:string"/>
+            <!--Trả lời xác nhận cấp phép. Chỉ bao gồm 6 kí tự số từ 0-9, cáckí tự a-z hoặc A-Z-->
+            <xsd:element name="AuthorizationCode" type="xsd:string"/>
+            <!--Dữ liệu bổ sung. Tên thông tin chủ thẻ-->
+            <xsd:element name="AdditionalData" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getBillInfoRequest">
+    <wsdl:part element="tns:getBillInfoRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getBillInfoResponse">
+    <wsdl:part element="tns:getBillInfoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SmlGetBillInfo">
+    <wsdl:operation name="getBillInfo">
+      <wsdl:input message="tns:getBillInfoRequest"/>
+      <wsdl:output message="tns:getBillInfoResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SmlGetBillInfo" type="tns:SmlGetBillInfo">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getBillInfo">
+      <soap:operation soapAction="tns:getBillInfo"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmlGetBillInfo">
+    <wsdl:port binding="tns:SmlGetBillInfo" name="SmlGetBillInfo">
+      <soap:address location="https://datapower.scb.com.vn:8100/billpayment/sml/getBillInfo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://datapower:8100/billpayment/sml/getBillInfo</con:endpoint><con:endpoint>https://192.168.112.6:8100/billpayment/sml/getBillInfo</con:endpoint><con:endpoint>https://datapower.scb.com.vn:8100/billpayment/sml/getBillInfo</con:endpoint></con:endpoints><con:operation isOneWay="false" action="tns:getBillInfo" name="getBillInfo" bindingOperationName="getBillInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="b6a572b4-8c23-4f95-99f2-6aa9b3a6076a"><con:settings/><con:call name="Request 1" id="ae7561e8-d208-4d36-9698-c72b5ded7a20"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.112.6:8100/billpayment/sml/getBillInfo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sml="http://www.scb.com.vn/billpayment/sml">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sml:getBillInfoRequest>
+         <PrimaryAccountNumber></PrimaryAccountNumber>
+         <TransactionAmount>000000000000</TransactionAmount>
+         <TransmissionDateTime>0822160930</TransmissionDateTime>
+         <AuditNumber>000019</AuditNumber>
+         <MerchantType>7399</MerchantType>
+         <TermId>12345678</TermId>
+         <CardAcceptorName>SCB EBANKING             HCM         VNM</CardAcceptorName>
+         <ServiceCode>VNPBILLING</ServiceCode>
+         <BillId>0912990330</BillId>
+      </sml:getBillInfoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="tns:getBillInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
